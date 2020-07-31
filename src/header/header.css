@@ -1,0 +1,23 @@
+.header {
+    background-color: #7ed321;
+    height: 77px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 25px;
+}
+
+.logo {
+    height: 37px;
+    width: auto;
+    justify-self: flex-start;
+}
+
+@media screen and (min-width: 600px) {
+    .header {
+        height: 116px;
+    }
+    .logo {
+        height: 56px;
+    }
+}

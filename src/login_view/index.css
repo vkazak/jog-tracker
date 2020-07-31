@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    height: calc(100vh - 77px);
+    justify-content: center;
+    align-items: center;
+}
+
+.outer-rectangle {
+    border-radius: 44px;
+}
+
+.content-col {
+    width: 160px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bear-image {
+    width: 100%;
+    content: url('bear-face.png');
+    height: auto;
+    margin-bottom: 103px;
+}
+
+button {
+    height: 60px;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #e990f9;
+    border-style: solid;
+    color: #e990f9;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #ffffff;
+    margin: 0px 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        height: calc(100vh - 116px);
+    }
+    .outer-rectangle {
+        height: 379px;
+        width: 503px;
+        background-color: #e990f9;
+    }
+    .bear-image {
+        content: url('bear-face-white.svg');
+        margin: 77px auto 56px;
+    }
+    .button {
+        border-color: #ffffff;
+        background-color: #e990f9;
+        color: #ffffff;
+    }
+}
