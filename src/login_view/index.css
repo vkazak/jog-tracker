@@ -3,6 +3,7 @@
     height: calc(100vh - 77px);
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .outer-rectangle {
@@ -24,7 +25,7 @@
     margin-bottom: 103px;
 }
 
-button {
+.let-me-button {
     height: 60px;
     border-radius: 30px;
     border-width: 3px;
@@ -50,7 +51,7 @@ button {
         content: url('bear-face-white.svg');
         margin: 77px auto 56px;
     }
-    .button {
+    .let-me-button {
         border-color: #ffffff;
         background-color: #e990f9;
         color: #ffffff;

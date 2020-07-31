@@ -8,7 +8,7 @@ export function LogInView(props) {
             <div className='outer-rectangle'>
                 <div className='content-col'>
                     <img className='bear-image' alt='Bear face' />
-                    <button className='button'> Let me in </button> 
+                    <button className='let-me-button'> Let me in </button> 
                 </div>
             </div>
         </div>
