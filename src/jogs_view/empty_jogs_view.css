@@ -1,0 +1,44 @@
+.empty-jogs-container {
+    margin: auto;
+    height: calc(100vh - 77px);
+    width: 249px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sad-emoji {
+    content: url('sad-rounded-square-emoticon.svg');
+    width: 85px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.empty-jogs-paragraph {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 141px;
+    color: gray;
+}
+
+.create-jog-button {
+    height: 60px;
+    border-radius: 30px;
+    border-width: 3px;
+    border-color: #e990f9;
+    border-style: solid;
+    color: #e990f9;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #ffffff;
+    margin: 0px 5px;
+    width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    .sad-emoji {
+        width: 150px;
+        margin-bottom: 47px;
+    }
+}
