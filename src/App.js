@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import { Header } from './header/header';
 import { LogInView } from './login_view';
+import { InfoView } from './info_view';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={LogInView} />
+          <Route exact path='/info' component={InfoView} />
         </Switch>
       </BrowserRouter>
     </main>
