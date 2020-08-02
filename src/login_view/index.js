@@ -5,13 +5,12 @@ import { useHistory } from 'react-router-dom';
 
 export function LogInView(props) {
     const history = useHistory();
-    
+
     const letMeIn = async () => {
         try {
             const uuid = 'hello';
             const token = await loginByUUID(uuid);
             localStorage.setItem('token', token);
-            console.log(token);
             history.push('/jogs');
         } catch(err) {
             console.log(err);

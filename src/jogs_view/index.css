@@ -1,0 +1,39 @@
+.jog-item-container {
+    height: 187px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-box {
+    margin-left: 46px;
+    width: 120px;
+}
+
+.jog-icon {
+    content: url('jog-icon.svg');
+    width: 87px;
+    height: auto;
+}
+
+
+.description-name {
+    font-size: 14px;
+}
+
+.description-value {
+    font-size: 14px;
+    color: grey;
+}
+
+hr {
+    height: 1px;
+    border-width:0;
+    background-color: #d7d7d7;
+}
+
+@media screen and (min-width: 600px) {
+    hr {
+        display: none;
+    }
+}
