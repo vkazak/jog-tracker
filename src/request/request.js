@@ -8,11 +8,23 @@ const getConfigForAuthoizedUser = () => {
         }
     })
 }
+
 export async function loginByUUID(uuid) {
     try {
         const response = await axios.post(serverUrl + '/auth/uuidLogin', { uuid });
         const responseData = response.data.response;
         return (responseData.access_token);
+    } catch(err) {
+        console.log(err);
+    } 
+} 
+
+export async function getCurrentUser() {
+    try {
+        const config = getConfigForAuthoizedUser();
+        const response = await axios.get(serverUrl + '/auth/user', config);
+        const user = response.data.response;
+        return user;
     } catch(err) {
         console.log(err);
     } 
@@ -36,6 +48,18 @@ export async function createJog({ time, distance, date }) {
         const config = getConfigForAuthoizedUser();
         const data = { distance, time, date };
         const response = await axios.post(serverUrl + '/data/jog', data, config);
+        return response.data.response;
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+export async function updateJog({ jogId, time, distance, date }) {
+    try {
+        const config = getConfigForAuthoizedUser();
+        const user_id = localStorage.getItem('user_id');
+        const data = {user_id, jog_id: jogId, distance, time, date };
+        const response = await axios.put(serverUrl + '/data/jog', data, config);
         return response.data.response;
     } catch(err) {
         console.log(err);

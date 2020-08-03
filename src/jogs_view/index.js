@@ -37,7 +37,7 @@ export function JogsView(props) {
                     />
                 }
                 { jogsToShow.map(jog => 
-                    <JogItem jog={jog} key={jog.id} />
+                    <JogItem history={history} jog={jog} key={jog.id} />
                 ) }
                 <button className="add-jog-button" onClick={() => history.push('/edit')}>
                     <i className="fa fa-plus"></i>
@@ -72,6 +72,15 @@ function JogItem(props) {
         }
     ];
 
+    const onEdit = () => {
+        props.history.push(
+            {
+                pathname: '/edit',
+                state: { jog }
+            }
+        )
+    }
+
     const makeJogDescriptionLine = ({ name, value }) => {
         if (name !== '') name += ': ';
         return (
@@ -83,7 +92,7 @@ function JogItem(props) {
     };
 
     return(
-        <div>
+        <div style={{cursor: "pointer"}} onClick={onEdit}>
             <div className='jog-item-container'>
                 <img className='jog-icon' alt='Jog icon'/>
                 <div className='description-box'>

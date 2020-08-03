@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { loginByUUID } from '../request/request';
+import { loginByUUID, getCurrentUser } from '../request/request';
 import { useHistory } from 'react-router-dom';
 
 export function LogInView(props) {
@@ -10,7 +10,9 @@ export function LogInView(props) {
         try {
             const uuid = 'hello';
             const token = await loginByUUID(uuid);
+            const user = await getCurrentUser();
             localStorage.setItem('token', token);
+            localStorage.setItem('user_id', user.id);
             history.push('/jogs');
         } catch(err) {
             console.log(err);
