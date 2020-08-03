@@ -13,6 +13,10 @@ function MenuItem(props) {
 export function Header(props) {
     const [menuOpened, setMenuOpened] = useState(false);
 
+    const onFilterClick = () => {
+        props.setFilterOn(!props.isFilterOn);
+    }
+
     const menuItems = [
         { title: 'jogs', link: '/jogs' },
         { title: 'info', link: '/info' },
@@ -24,6 +28,7 @@ export function Header(props) {
     let logoClass = 'logo';
     let menuButtonClass = 'menu-button';
     let buttonIconClass = 'fa fa-bars';
+
     if (menuOpened) {
         headerClass += ' header-on-menu-opened';
         navContainerClass += ' nav-container-on-menu-opened';
@@ -32,14 +37,22 @@ export function Header(props) {
         buttonIconClass = 'fa fa-close';
     }
 
+    let filterButtonClass = 'filter-button';
+    if (props.isFilterOn) {
+        filterButtonClass += ' filter-button-active';
+    }
+
     return (
         <div className={headerClass}>
             <img className={logoClass} alt='Logo' />
             <div className={navContainerClass}> 
                 <div className='nav-items-box'>
-                    { menuItems.map(item => <MenuItem {...item}/>) }
+                    { menuItems.map(item => <MenuItem {...item} key={item.title}/>) }
                 </div>
             </div>
+            <button className={filterButtonClass} onClick={onFilterClick} >
+                <i className='fa fa-filter'></i>
+            </button>
             <button className={menuButtonClass} onClick={ () => setMenuOpened(!menuOpened) }>
                 <i className={buttonIconClass}></i>
             </button>

@@ -31,15 +31,15 @@ export function EditJogForm(props) {
                 </button>
                 <form className="edit-form" onSubmit={onSave}>
                     <div className="edit-form-group">
-                        <label for='distance_input'>Distance</label> 
+                        <label htmlFor='distance_input'>Distance</label> 
                         <input type='text' onChange={onDistanceChange} id='distance_input'/>
                     </div>
                     <div className="edit-form-group">
-                        <label for='time_input'>Time</label> 
+                        <label htmlFor='time_input'>Time</label> 
                         <input type='text' onChange={onTimeChange} id='time_input'/>
                     </div>
                     <div className="edit-form-group">
-                        <label for='date_input'>Date</label> 
+                        <label htmlFor='date_input'>Date</label> 
                         <DatePicker selected={date} onChange={onDateChange} id='date_input'/>
                     </div>
                     <input type='submit' className="edit-form-save-button" value="Save"/>

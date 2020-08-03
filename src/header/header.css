@@ -31,6 +31,7 @@
     width: 100vw;
     height: calc(100vh - 77px);
     background-color: white;
+    z-index: 2;
 }
 
 .nav-container-on-menu-opened {
@@ -63,6 +64,22 @@
     font-size: 28px;
 }
 
+.filter-button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 28px;
+    margin-right: 39px;
+}
+
+.filter-button-active {
+    color: #62aa14;
+    border-style: solid;
+    border-color: #62aa14;
+    border-radius: 5px;
+}
+
 .menu-button-on-menu-opened {
     color: #b0abab;
 }
@@ -80,6 +97,10 @@
     }
     .menu-button {
         display: none;
+    }
+    .filter-button {
+        margin-right: 0px;
+        margin-left: 56px;
     }
     .nav-container {
         position: static;

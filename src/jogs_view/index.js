@@ -3,10 +3,21 @@ import { EmptyJogsView } from './empty_jogs_view';
 import { getJogsForUser } from '../request/request';
 import './index.css';
 import { useHistory } from 'react-router-dom';
+import { JogFilter } from './jog_filter';
 
 export function JogsView(props) {
     const history = useHistory();
     const [jogs, setJogs] = useState([]);
+    const [dateFrom, setDateFrom] = useState();
+    const [dateTo, setDateTo] = useState();
+    
+    const filterFn = (jog) => {
+        const from = dateFrom ? dateFrom / 1000 : 0;
+        const to = dateTo ? dateTo / 1000 : Infinity;
+        return ((!props.isFilterOn) || (jog.date >= from && jog.date <= to))
+    }
+
+    const jogsToShow = jogs.filter(filterFn);
 
     useEffect(() => {
         getJogsForUser()
@@ -17,7 +28,15 @@ export function JogsView(props) {
     if (jogs.length > 0) {
         return (
             <div> 
-                { jogs.map(jog => 
+                { props.isFilterOn &&
+                    <JogFilter 
+                        dateFrom={dateFrom} 
+                        setDateFrom={setDateFrom} 
+                        dateTo={dateTo} 
+                        setDateTo={setDateTo}
+                    />
+                }
+                { jogsToShow.map(jog => 
                     <JogItem jog={jog} key={jog.id} />
                 ) }
                 <button className="add-jog-button" onClick={() => history.push('/edit')}>
