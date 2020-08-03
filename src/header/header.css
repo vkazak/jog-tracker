@@ -56,6 +56,10 @@
     text-transform: uppercase;
 }
 
+.nav-item-active {
+    color: #7ed321;
+}
+
 .menu-button {
     border: none;
     background-color: transparent;
@@ -117,7 +121,11 @@
     }
     .nav-item {
         color: #ffffff;
+        padding: 0px 1px;
         margin-left: 45px;
         font-size: 14px;
+    }
+    .nav-item-active {
+        border-bottom: solid 2px #ffffff;
     }
 }

@@ -1,22 +1,34 @@
 import React, { useState } from 'react';
 import './header.css';
+import { useHistory } from 'react-router-dom';
 
 function MenuItem(props) {
-    
+    const goToPage = (event) => {
+        event.preventDefault();
+        props.setMenuOpened(false);
+        props.setPathname(props.link);
+        props.history.push(props.link);
+    }
+    let itemClass = 'nav-item';
+    if (props.link === props.pathname) {
+        itemClass += ' nav-item-active';
+    }
+
     return(
-        <a className="nav-item" href={props.link}>
+        <a className={itemClass} href={props.link} onClick={goToPage}>
             {props.title} 
         </a>
     )
 }
 
 export function Header(props) {
+    const history = useHistory();
+    const [pathname, setPathname] = useState(history.location.pathname);
     const [menuOpened, setMenuOpened] = useState(false);
 
     const onFilterClick = () => {
         props.setFilterOn(!props.isFilterOn);
     }
-
     const menuItems = [
         { title: 'jogs', link: '/jogs' },
         { title: 'info', link: '/info' },
@@ -28,16 +40,17 @@ export function Header(props) {
     let logoClass = 'logo';
     let menuButtonClass = 'menu-button';
     let buttonIconClass = 'fa fa-bars';
-
+    let filterButtonClass = 'filter-button';
+    
     if (menuOpened) {
         headerClass += ' header-on-menu-opened';
         navContainerClass += ' nav-container-on-menu-opened';
         logoClass += ' logo-on-menu-opened';
         menuButtonClass += ' menu-button-on-menu-opened';
         buttonIconClass = 'fa fa-close';
+        filterButtonClass += ' hidden';
     }
 
-    let filterButtonClass = 'filter-button';
     if (props.isFilterOn) {
         filterButtonClass += ' filter-button-active';
     }
@@ -47,7 +60,16 @@ export function Header(props) {
             <img className={logoClass} alt='Logo' />
             <div className={navContainerClass}> 
                 <div className='nav-items-box'>
-                    { menuItems.map(item => <MenuItem {...item} key={item.title}/>) }
+                    { menuItems.map(item => 
+                        <MenuItem 
+                            {...item} 
+                            history={history} 
+                            pathname={pathname}
+                            setPathname={setPathname}
+                            setMenuOpened={setMenuOpened}
+                            key={item.title}
+                        />
+                    ) }
                 </div>
             </div>
             <button className={filterButtonClass} onClick={onFilterClick} >

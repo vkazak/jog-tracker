@@ -12,8 +12,8 @@ function App() {
 
   return (
     <main>
-      <Header isFilterOn={isFilterOn} setFilterOn={setFilterOn}/>
       <BrowserRouter>
+        <Header isFilterOn={isFilterOn} setFilterOn={setFilterOn}/>
         <Switch>
           <Route exact path='/' component={LogInView} />
           <Route exact path='/jogs' 
