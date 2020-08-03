@@ -32,6 +32,22 @@ hr {
     background-color: #d7d7d7;
 }
 
+.add-jog-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-color: #7ed321;
+    border-style: solid;
+    background-color: transparent;
+    color: #7ed321;
+    font-size: 25px;
+    font-weight: 100;
+}
+
 @media screen and (min-width: 600px) {
     hr {
         display: none;

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { EmptyJogsView } from './empty_jogs_view';
 import { getJogsForUser } from '../request/request';
 import './index.css';
+import { useHistory } from 'react-router-dom';
 
 export function JogsView(props) {
-
+    const history = useHistory();
     const [jogs, setJogs] = useState([]);
 
     useEffect(() => {
@@ -15,9 +16,14 @@ export function JogsView(props) {
 
     if (jogs.length > 0) {
         return (
-            jogs.map(jog => 
-                <JogItem jog={jog} key={jog.id} />
-            )
+            <div> 
+                { jogs.map(jog => 
+                    <JogItem jog={jog} key={jog.id} />
+                ) }
+                <button className="add-jog-button" onClick={() => history.push('/edit')}>
+                    <i className="fa fa-plus"></i>
+                </button>
+            </div>
         )
     } else {
         return <EmptyJogsView />

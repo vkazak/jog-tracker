@@ -5,6 +5,7 @@ import { Header } from './header/header';
 import { LogInView } from './login_view';
 import { InfoView } from './info_view';
 import { JogsView } from './jogs_view/index';
+import { EditJogForm } from './edit_jog_form';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/' component={LogInView} />
           <Route exact path='/jogs' component={JogsView} />
           <Route exact path='/info' component={InfoView} />
+          <Route exact path='/edit' component={EditJogForm} />
         </Switch>
       </BrowserRouter>
     </main>
