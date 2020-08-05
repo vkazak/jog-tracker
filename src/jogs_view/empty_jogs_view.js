@@ -6,7 +6,7 @@ export function EmptyJogsView(props) {
         <div className='empty-jogs-container'>
             <img className='sad-emoji' alt='Sad emoji' />
             <p className='empty-jogs-paragraph'>Nothing is there</p>
-            <button className='create-jog-button'>Create your jog first</button>
+            <button className='create-jog-button' onClick={props.onCreateJog}>Create your jog first</button>
         </div>
     )
 }

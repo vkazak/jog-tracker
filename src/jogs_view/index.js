@@ -18,6 +18,7 @@ export function JogsView(props) {
     }
 
     const jogsToShow = jogs.filter(filterFn);
+    const goToJogFormViewFn = () => history.push('/edit');
 
     useEffect(() => {
         getJogsForUser()
@@ -39,13 +40,13 @@ export function JogsView(props) {
                 { jogsToShow.map(jog => 
                     <JogItem history={history} jog={jog} key={jog.id} />
                 ) }
-                <button className="add-jog-button" onClick={() => history.push('/edit')}>
+                <button className="add-jog-button" onClick={goToJogFormViewFn}>
                     <i className="fa fa-plus"></i>
                 </button>
             </div>
         )
     } else {
-        return <EmptyJogsView />
+        return <EmptyJogsView onCreateJog={goToJogFormViewFn}/>
     }
 }
 

@@ -1,6 +1,7 @@
 .empty-jogs-container {
     margin: auto;
     height: calc(100vh - 77px);
+    min-height: 500px;
     width: 249px;
     display: flex;
     flex-direction: column;
