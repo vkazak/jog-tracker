@@ -4,25 +4,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 5px;
+    padding: 0px 12px;
 }
 
 .jog-filter-input-group {
-    margin: 0px 22px;
+    display: table;
+    margin: 0px 17px;
     white-space: nowrap;
     padding: 4px;
 }
 
-/* TODO */
-
 .jog-filter-input-group > label {
-    margin-right: 15px;
+    display: table-cell;
+    padding-right: 15px;
     font-size: 13px;
     opacity: 0.5;
 }
 
 .jog-filter-input-group input {
-    display: inline-block;
+    display: table-cell;
     border-radius: 11px;
     border-style: solid;
     line-height: 27px;

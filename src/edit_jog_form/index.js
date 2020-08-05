@@ -7,7 +7,7 @@ import { createJog, updateJog } from '../request/request';
 
 export function EditJogForm(props) {
     const history = useHistory();
-    const jog = history.location.state.jog;
+    const jog = history.location.state ? history.location.state.jog : undefined;
     
     const [time, setTime] = useState(jog ? jog.time : "0");
     const [distance, setDistance] = useState(jog ? jog.distance : "0");
@@ -36,6 +36,7 @@ export function EditJogForm(props) {
                 <button className="close-edit-form-button" onClick={() => history.goBack()}>
                     <i className="fa fa-close"></i>
                 </button>
+                <div style={{clear: "both"}} />
                 <form className="edit-form" onSubmit={onSave}>
                     <div className="edit-form-group">
                         <label htmlFor='distance_input'>Distance</label> 
