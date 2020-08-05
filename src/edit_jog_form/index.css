@@ -20,7 +20,7 @@
     align-items: center;
     margin: 26px auto;
     padding: 0px 35px;
-    max-width: 320px;
+    max-width: 340px;
 }
 
 .edit-form-group {
@@ -36,7 +36,8 @@
 }
 
 .edit-form-group input {
-    max-width: 236px;
+    width: 236px;
+    box-sizing: border-box;
     line-height: 17px;
     padding: 5px;
     border-radius: 7px;
@@ -46,6 +47,7 @@
 .close-edit-form-button {
     margin-top: 21px;
     margin-right: 21px;
+    padding: 0;
     float: right;
     background-color: transparent;
     border: none;
@@ -66,6 +68,7 @@
     font-weight: bold;
     font-size: 12.6px;
     background-color: #7ed321;
+    -webkit-appearance: none;
 }
 
 @media screen and (min-width: 600px) {
@@ -74,12 +77,12 @@
     }
 
     .edit-form-group > label {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 465px) {
     .edit-form {
-        width: 203px;
+        width: 236px;
     }
 }

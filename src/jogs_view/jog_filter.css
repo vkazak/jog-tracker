@@ -8,21 +8,20 @@
 }
 
 .jog-filter-input-group {
-    display: table;
+    display: flex;
+    align-items: center;
     margin: 0px 17px;
     white-space: nowrap;
     padding: 4px;
 }
 
 .jog-filter-input-group > label {
-    display: table-cell;
     padding-right: 15px;
     font-size: 13px;
     opacity: 0.5;
 }
 
 .jog-filter-input-group input {
-    display: table-cell;
     border-radius: 11px;
     border-style: solid;
     line-height: 27px;
