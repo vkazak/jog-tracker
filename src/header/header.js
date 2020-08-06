@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './header.css';
 import { useHistory } from 'react-router-dom';
 
-function MenuItem(props) {
+export function MenuItem(props) {
     const goToPage = (event) => {
         event.preventDefault();
         props.setMenuOpened(false);
